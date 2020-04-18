@@ -3,17 +3,17 @@
     .chat-main__header__main
       .left
         %h2.group-about
-          グループ
+          = @group.name
         %ul.member-list
           member:
-          %li
-          = link_to "#", class: "member-name" do
-            moe
-      .main__header__edit-btn
-        = link_to "#" do
-          Edit
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
+
+      =link_to edit_group_path(params[:group_id]), class:"decolation" do
+        .main__header__edit-btn  Edit
 
   .messages
+    = render @messages
     .message
       .message__info
         %p.message__info__talker
@@ -22,13 +22,12 @@
           2019/12/11(Web)
       %p.message__text
         こんにちは！
-  
 
   .form
-    %form
-      %input.form__message
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
       .form__mask
-        %label.form__mask__image
-          = icon('fa','image',class: 'icon')
-          %input.hidden{type: 'file'}
-      %input.form__submit{type: 'submit', value: 'Send'}
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
