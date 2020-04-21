@@ -16,12 +16,7 @@
     = render @messages
     .message
       .message__info
-        %p.message__info__talker
-          moe
-        %p.message__info__date
-          2019/12/11(Web)
-      %p.message__text
-        こんにちは！
+ 
 
   .form
     = form_for [@group, @message] do |f|
