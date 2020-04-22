@@ -57,6 +57,7 @@
         height: calc(100vh - 100px - 90px);
         width: calc(100vw - 300px);
         padding: 46px 40px;
+        overflow: scroll;
         .message {
           padding-bottom: 40px;
           &__info {
