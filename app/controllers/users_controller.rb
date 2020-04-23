@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
   end
 
-  peiveta
+  private
 
   def user_params
     params.require(:user).permit(:name, :email)
