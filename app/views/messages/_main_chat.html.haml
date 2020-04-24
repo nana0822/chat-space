@@ -6,8 +6,8 @@
           = @group.name
         %ul.member-list
           member:
-        - @group.group_users.each do |group_user|
-          = group_user.user.name
+          - @group.users.each do |user|
+            %li=  user.name
 
       =link_to edit_group_path(params[:group_id]), class:"decolation" do
         .main__header__edit-btn  Edit
