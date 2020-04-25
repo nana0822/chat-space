@@ -9,6 +9,7 @@
     height: 100px;
     width: calc(100vw - 300px);
     display: flex;
+    border-bottom: solid 1px #eee;
     
     &__main {
       width: calc(100vw - 300px - 80px);
@@ -30,10 +31,12 @@
           list-style: none;
           margin: 0;
           padding: 0;
-          .member-name {
-            text-decoration: none;
-            margin-left: 5px;
-            color: #999999;
+          .li {
+            margin: 0;
+            padding: 0;
+          }
+          li+li{
+            margin-left: 0.3rem;
           }
         }   
       }
