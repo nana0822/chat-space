@@ -9,6 +9,7 @@
     height: 100px;
     width: calc(100vw - 300px);
     display: flex;
+    border-bottom: solid 1px #eee;
     
     &__main {
       width: calc(100vw - 300px - 80px);
@@ -30,10 +31,12 @@
           list-style: none;
           margin: 0;
           padding: 0;
-          .member-name {
-            text-decoration: none;
-            margin-left: 5px;
-            color: #999999;
+          .li {
+            margin: 0;
+            padding: 0;
+          }
+          li+li{
+            margin-left: 0.3rem;
           }
         }   
       }
@@ -49,71 +52,77 @@
           text-decoration: none;
           color: $light_blue;
         }           
+      }
     }
-  }
 
-      .messages {
-        height: calc(100vh - 190px);
-        padding: 46px 40px;
-        background-color: #fafafa;
-        overflow: scroll;
-        .message {
-          padding-bottom: 40px;
+    .messages {
+      height: calc(100vh - 190px);
+      padding: 46px 40px;
+      background-color: #fafafa;
+      overflow: scroll;
+       .message {
+        padding-bottom: 40px;
 
-          .upper-message{
-            display: flex;
+         .upper-message{
+          display: flex;
+          margin-bottom: 10px;
+
+          &__user-name {
+            color: #434a54;
+            font-size: 16px;
+            font-weight: bold;
+           }
+           &__date{
+             color: #999999;
+             font-size: 12px;
+             margin-left: 10px;
+          }
+         }
+         .lower-message {
+             color: #434a54;
+             font-size: 14px;
             margin-bottom: 10px;
-
-            &__user-name {
-              color: #434a54;
-              font-size: 16px;
-              font-weight: bold;
-            }
-            &__date{
-              color: #999999;
-              font-size: 12px;
-              margin-left: 10px;
-            }
           }
-          .lower-message {
-              color: #434a54;
-              font-size: 14px;
-              margin-bottom: 10px;
-            }
-        }
+       }
     }
-      .form {
-        background-color: #DDDDDD;
-        box-sizing: border-box;
-        height: 90px;
-        padding: 20px 50px 20px 40px;
-        &__message {
-          border: none;
-          float: left;
-          height: 50px;
-          width: calc(100% - 150px);
-        }
-        &__mask {
-          background-color: $white;
-          float: left;
-          height: 50px;
-          padding-right: 10px;
+    .form {
+      height: 90px;
+      background-color: #d2d2d2;
+      padding: 20px 40px;
+
+      form{
+        display: flex;
+        .input-box {
+          width: 100%;
+          position: relative;
+          &__text {
+            height: 50px;
+            width: 100%;
+            color: #343a54;
+            border-style:  none;
+            padding: 0 40px 0 10px;
+          }
           &__image {
-            font-size: 20px;
-            line-height: 50px;
-          }
-          .hidden {
-            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.3rem;
+
+            &__file {
+              display: none;
+            }
           }
         }
-        &__submit {
-          background-color: $light_blue;
-          color: $white;
-          float: right;
-          font-size: 16px;
+        .submit-btn {
+          width: 100px;
           height: 50px;
-          margin-left: 15px;
           padding: 0 30px;
+          margin-left: 15px;
+          background-color: #38aef0;
+          color: white;
+          cursor: pointer;
         }
       }
-}
+    }
+  }

@@ -9,6 +9,7 @@
       %li.list
         = link_to edit_user_path(current_user.id)do
           = icon('fa', 'cog',class: 'icon')
+          
   .groups
     - current_user.groups.each do |group|
       .group
